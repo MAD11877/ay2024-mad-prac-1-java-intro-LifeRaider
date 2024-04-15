@@ -12,7 +12,6 @@ public class Question3
 
     Scanner in = new Scanner(System.in);
 
-    System.out.print();
     int integer = in.nextInt();
 
     int result = integer * integer;
