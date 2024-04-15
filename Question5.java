@@ -31,7 +31,7 @@ public class Question5
     ArrayList<Integer> numbers = new ArrayList<>();
 
     int integer = in.nextInt();
-    
+
     for (int i = integer; i > 0; i--){
       int num = in.nextInt();
       numbers.add(num);
@@ -39,30 +39,22 @@ public class Question5
 
     int fmode = 0;
     int fmax = 0;
+
     for (int i : numbers){
-      int temp = i;
-      numbers.remove(i);
-      int count = 1;
-      while (true){
-        if (numbers.contains(temp)) {
+      int count= 0;
+      for (int j : numbers){
+        if (i == j){
           count++;
-          if (numbers.size() > 1) {
-              numbers.remove(temp);
-          } else {
-            break;
-          }
-        } else {
-          break;
         }
       }
       if (count > fmax){
         fmax = count;
-        fmode = temp;
+        fmode = i;
       }
     }
 
     System.out.print(fmode);
-    
+
     in.close();
   }
 }
